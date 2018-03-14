@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 	protect_from_forgery with: :exception
 
-	def index
-		
+	def index		
+
 	end
+
 end
