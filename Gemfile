@@ -32,6 +32,8 @@ gem 'activeadmin', '~> 1.2', '>= 1.2.1'
 
 gem 'inherited_resources'
 
+gem 'active_skin'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
