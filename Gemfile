@@ -31,6 +31,7 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'activeadmin', '~> 1.2', '>= 1.2.1'
 
 gem 'inherited_resources'
+# gem 'inherited_resources', '~> 1.8'
 
 gem 'active_skin'
 
@@ -39,7 +40,8 @@ gem 'paperclip', '~> 5.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
+# gem 'bcrypt' # --platform=ruby
 
 # gem 'bcrypt' # --platform=ruby
 
