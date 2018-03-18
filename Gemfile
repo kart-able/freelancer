@@ -35,7 +35,7 @@ gem 'inherited_resources'
 
 gem 'active_skin'
 
-gem 'paperclip', '~> 5.1'
+gem 'paperclip', '~> 6.0.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

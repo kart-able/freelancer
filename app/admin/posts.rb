@@ -12,25 +12,24 @@ ActiveAdmin.register Post do
 #   permitted
 # end
 
-  permit_params :title, :body
+  permit_params :title, :body, :image
 
-  index do
-    selectable_column
-    id_column
-    column :title
-    column :created_at
-    column :updated_at
-    actions
+  show do |t|
+  	attributes_table do
+  		row :title
+  		row :body
+  		row :image do
+          post.image? ? image_tag(post.image.url, height: '100') : content_tag(:span, "No image yet")
+  		end
+  	end
   end
 
-  filter :title
-  filter :created_at
-  filter :updated_at
 
   form do |f|
     f.inputs do
       f.input :title
       f.input :body
+      f.input :image, hint: f.post.image? ? image_tag(post.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
     end
     f.actions
   end
