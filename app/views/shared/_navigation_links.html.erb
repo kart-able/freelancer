@@ -1,6 +1,13 @@
-<% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-<% else %>
-  <li><%= link_to 'Login', new_user_session_path %></li>
-<% end %>
+<div class="" style="background-color: #1a252f;">
+  <ul class="nav justify-content-center">
+	<% if user_signed_in? %>
+      <li class="nav-item">
+      <%= link_to 'Edit account|', edit_user_registration_path %></li>
+      <li class="nav-item">
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+       <li class="nav-item">
+       <%= link_to 'Login', new_user_session_path %></li>
+    <% end %>
+  </ul>
+</div>
