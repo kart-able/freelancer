@@ -12,12 +12,13 @@ ActiveAdmin.register Post do
 #   permitted
 # end
 
-  permit_params :title, :body, :image
+  permit_params :title, :body, :author_id, :image
 
   show do |t|
   	attributes_table do
   		row :title
-  		row :body
+      row :body
+      row :author_id
   		row :image do
           post.image? ? image_tag(post.image.url, height: '100') : content_tag(:span, "No image yet")
   		end
@@ -29,6 +30,7 @@ ActiveAdmin.register Post do
     f.inputs do
       f.input :title
       f.input :body
+      f.input :author_id
       f.input :image, hint: f.post.image? ? image_tag(post.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
     end
     f.actions

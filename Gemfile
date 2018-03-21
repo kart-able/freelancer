@@ -37,6 +37,8 @@ gem 'active_skin'
 
 gem 'paperclip', '~> 6.0.0'
 
+gem 'cancancan'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
