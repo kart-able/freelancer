@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   # ajout cf https://activeadmin.info/13-authorization-adapter.html
   # en lien avec active_admin.rb ligne 81
   def access_denied(exception)
-    redirect_to admin_organizations_path, alert: exception.message
+    respond_to do |format|
+      format.json { head :forbidden, content_type: 'text/html' }
+      format.html { redirect_to main_app.root_url, notice: exception.message }
+   end
   end
 
 end
