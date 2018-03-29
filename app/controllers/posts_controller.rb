@@ -13,6 +13,23 @@ class PostsController < ApplicationController
 		@posts = Post.order("created_at DESC").limit(4).offset(1)		
 	end
 
+	def edit
+        @post = Post.find(params[:id])
+    end
+
+	def create
+        Post.create(params[:post])
+    end
+
+    def update
+	    @post = current_account.post.find(params[:id])
+	    if @post.update(post_params)
+	      redirect_to @post
+	    else
+	      render 'edit'
+	    end
+    end
+
 	private
 
 	def post_params
