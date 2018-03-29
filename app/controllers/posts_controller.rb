@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 	end
 
 	def show
+        authorize! :read, @post, :alert => "Please log in to access this page"
+
 		@post = Post.find(params[:id])
 		@posts = Post.order("created_at DESC").limit(4).offset(1)		
 	end
