@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
 
+
+  def admin?
+  	false
+  end
+
+
 end
