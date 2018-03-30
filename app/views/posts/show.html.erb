@@ -19,6 +19,10 @@
             <h3>Project Description</h3>
             <p>
               <%= @post.body %>
+              <br />
+              <% if can? :edit, @post %>
+                <%= link_to "Edit", edit_post_path(@post) %>
+              <% end %>
             </p>
           </div>
         </div>

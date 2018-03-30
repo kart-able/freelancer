@@ -7,22 +7,24 @@ class PostsController < ApplicationController
 	end
 
 	def show
-        authorize! :read, @post, :alert => "Please log in to access this page"
+#       authorize! :read, @post, :alert => "Please log in to access this page"
 
 		@post = Post.find(params[:id])
 		@posts = Post.order("created_at DESC").limit(4).offset(1)		
 	end
 
 	def edit
+        authorize! :edit, @post, :alert => "You cannot access this page"
+
         @post = Post.find(params[:id])
     end
 
-	def create
-        Post.create(params[:post])
-    end
+#	def create
+#        Post.create(params[:post]) # users won't create new posts, they can edit and update them
+#   end
 
     def update
-	    @post = current_account.post.find(params[:id])
+	    @post = Post.find(params[:id])
 	    if @post.update(post_params)
 	      redirect_to @post
 	    else
