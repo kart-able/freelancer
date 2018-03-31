@@ -5,7 +5,8 @@ class AdminUser < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin?
-  	true
+  	puts 'admin class'
+    return true
   end
 
 end

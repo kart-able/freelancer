@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
 
   def admin?
-  	false
+    puts 'user class'
+  	return false
   end
 
 
